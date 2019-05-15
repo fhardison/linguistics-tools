@@ -75,32 +75,12 @@ def writeToFile(treestr, filename):
     svgobj.filename = filename
     svgobj.save()
 
-x = Node("", "v have")
-
 def main(ifile, ofile):
     with open(ifile, 'r', encoding="UTF8") as f:
         treedown = f.read().strip()
         tree = buildTree(None, tokenize(treedown))
         writeToFile(tree.output(), ofile)
     print("Done!")
-
-print(x.info)
-print(x.parent)
-print(x.children)
-
-TEST = "s tree\n\tpn he\n    vp\n        d the\n\t\tn cat\n    adv quickly\ns tree 2\n"
-
-#ts = tokenize(TEST)
-#print(list(ts))
-#tree = buildTree(None, ts)
-#print("Tree start: " + tree.info)
-
-#for t in tree.children:
-#    print("    " + t.info)
-#print(tree.output())
-
-# writeToFile(tree.output(), "C:\\Users\\fhard\\Desktop\\my_tree.svg")
-# writeToFile(("S", ("NP", "we"), ("VP", "run fast")), "C:\\Users\\fhard\\Desktop\\my_tree.svg")
 
 if __name__ == '__main__':
     import sys
