@@ -1,0 +1,6 @@
+Tree
+	NP subj
+		We
+	VP
+		V see
+		NP him
